@@ -1,0 +1,142 @@
+<!-- #283046 
+    #161d31
+
+    #7367f0
+    #d0d2d6
+-->
+<div class="home">
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav class="side"    [mode]="mobileQuery!.matches ? 'over' : 'side'"   [opened]="mobileQuery!.matches ? 'false' :open" >
+            <div class="fxcontainer" fxLayout="column" fxLayoutAlign="none center">
+                <img src="http://localhost:4200//src/assets/logo_1.png" alt="image" class="img-fluid">
+                
+                <div class="dashboard" (click)="dropDash=!dropDash" >
+                    <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                        <mat-icon class="icon-display">home</mat-icon>
+                        <span>Dashboard</span>
+                        <mat-icon class="matDropdown" *ngIf="dropDash" >keyboard_arrow_down</mat-icon>
+                        <mat-icon class="matDropdown" *ngIf="!dropDash" >keyboard_arrow_right</mat-icon>
+                    </div>
+                </div>
+
+                <div class="dropdown" [style.display]="dropDash? 'block':'none'">
+                    <div class="buttons" [class.current]="current==='e-commerce'" (click)="current='e-commerce'; onchange(); mobileQuery!.matches && sidenav.toggle() ">
+                        <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                           <span>O</span>
+                            <span>eCommerce</span>
+                        </div>
+                    </div>
+                    <div class="buttons" [class.current]="current==='analytics'" (click)="current='analytics' ; onchange();  mobileQuery!.matches && sidenav.toggle() ">
+                        <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                            <span>O</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <p>APPS & PAGES</p>
+                <div class="buttons" [class.current]="current==='email'" (click)="dropDash=false; current='email' ; onchange();  mobileQuery!.matches && sidenav.toggle() ">
+                    <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                        <mat-icon class="icon-display"> mail_outline</mat-icon>
+                        <span>Email</span>
+                    </div>
+                </div>
+                <div class="buttons" [class.current]="current==='chat'" (click)="dropDash=false; current='chat' ; onchange() ;  mobileQuery!.matches && sidenav.toggle() ">
+                    <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                        <mat-icon class="icon-display">chat_bubble_outline</mat-icon>
+                        <span>Chat</span>
+                    </div>
+                </div>
+                <div class="buttons" [class.current]="current==='todo'" (click)="dropDash=false; current='todo' ; onchange() ;  mobileQuery!.matches && sidenav.toggle() ">
+                    <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                        <mat-icon class="icon-display">check_box</mat-icon>
+                        <span>Todo</span>
+                    </div>
+                </div>
+                <div class="buttons" [class.current]="current==='calender'" (click)="dropDash=false; current='calender' ; onchange();  mobileQuery!.matches && sidenav.toggle() ">
+                    <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
+                        <mat-icon class="icon-display">calendar_today</mat-icon>
+                        <span>Calender</span>
+                    </div>
+                </div>
+
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content  >
+            <div class="navbar">
+                <div class="navIcon" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="30px">
+                    <mat-icon class="icon-display menu" (click)="sidenav.toggle()" >menu</mat-icon>
+                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='email' ; onchange()"> mail_outline</mat-icon>
+                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='chat' ; onchange()">chat_bubble_outline</mat-icon>
+                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='todo' ; onchange()">check_box</mat-icon>
+                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='calender' ; onchange()">calendar_today</mat-icon>
+                </div>
+
+                <div class="nav-right" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="30px">
+                    <div class="user-dropdown" >
+                        <div class="user" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="18px" (click)="userOpt=!userOpt" >
+                            <div class="name" fxLayout="column">
+                                <span class="name">John Doe</span>
+                                <span class="u-type">admin</span>
+                            </div>
+                            <span style="width: 80px; padding-right:10px">
+                                <img class="userimg img-fluid" src="http://localhost:4200//src/assets/admin.png" alt="image" >
+                            </span>
+                        </div>
+                        <div class="dw-list"  [style.display]="userOpt? 'block':'none'" >
+                            
+                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false; current='email' ; onchange()" >
+                                <mat-icon  > mail_outline</mat-icon>
+                                <span>Inbox</span>
+                            </div>
+                            
+                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false; current='chat' ; onchange()">
+                                <mat-icon > chat_bubble_outline</mat-icon>
+                                <span>Chat</span>
+                            </div>
+
+                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false; current='todo' ; onchange()" >
+                                <mat-icon > check_box</mat-icon>
+                                <span>Todo</span>
+                               
+                            </div>
+                            <hr style="position:relative; bottom:10px">
+                            
+                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false; logout() " >
+                                <mat-icon > logout</mat-icon>
+                                <span>Logout</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            <div class="components">
+               <!-- <app-e-commerce *ngIf="current==='e-commerce'"></app-e-commerce>
+               <app-analytics *ngIf="current==='analytics'"></app-analytics>
+               <app-email *ngIf="current==='email'"></app-email>
+               <app-chat *ngIf="current==='chat'"></app-chat>
+               <app-todo *ngIf="current==='todo'"></app-todo>
+               <app-calender *ngIf="current==='calender'"></app-calender> -->
+               <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
+
+
+<!-- <style>
+    @media screen {
+        
+    }
+</style> -->
