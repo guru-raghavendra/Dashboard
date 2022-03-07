@@ -20,13 +20,13 @@
                 </div>
 
                 <div class="dropdown" [style.display]="dropDash? 'block':'none'">
-                    <div class="buttons" [class.current]="current==='e-commerce'" (click)="current='e-commerce'; onchange(); mobileQuery!.matches && sidenav.toggle() ">
+                    <div class="buttons"  routerLink="/dashboard/e-commerce" routerLinkActive="current" (click)=" mobileQuery!.matches && sidenav.toggle() ">
                         <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
                            <span>O</span>
                             <span>eCommerce</span>
                         </div>
                     </div>
-                    <div class="buttons" [class.current]="current==='analytics'" (click)="current='analytics' ; onchange();  mobileQuery!.matches && sidenav.toggle() ">
+                    <div class="buttons" routerLink="/dashboard/analytics" routerLinkActive="current" (click)=" mobileQuery!.matches && sidenav.toggle() ">
                         <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
                             <span>O</span>
                             <span>Analytics</span>
@@ -36,25 +36,25 @@
                 
                 
                 <p>APPS & PAGES</p>
-                <div class="buttons" [class.current]="current==='email'" (click)="dropDash=false; current='email' ; onchange();  mobileQuery!.matches && sidenav.toggle() ">
+                <div class="buttons" routerLink="/dashboard/email" routerLinkActive="current" (click)="dropDash=false;  mobileQuery!.matches && sidenav.toggle() ">
                     <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
                         <mat-icon class="icon-display"> mail_outline</mat-icon>
                         <span>Email</span>
                     </div>
                 </div>
-                <div class="buttons" [class.current]="current==='chat'" (click)="dropDash=false; current='chat' ; onchange() ;  mobileQuery!.matches && sidenav.toggle() ">
+                <div class="buttons" routerLink="/dashboard/chat" routerLinkActive="current" (click)="dropDash=false; mobileQuery!.matches && sidenav.toggle() ">
                     <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
                         <mat-icon class="icon-display">chat_bubble_outline</mat-icon>
                         <span>Chat</span>
                     </div>
                 </div>
-                <div class="buttons" [class.current]="current==='todo'" (click)="dropDash=false; current='todo' ; onchange() ;  mobileQuery!.matches && sidenav.toggle() ">
+                <div class="buttons" routerLink="/dashboard/todo" routerLinkActive="current" (click)="dropDash=false; mobileQuery!.matches && sidenav.toggle() ">
                     <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
                         <mat-icon class="icon-display">check_box</mat-icon>
                         <span>Todo</span>
                     </div>
                 </div>
-                <div class="buttons" [class.current]="current==='calender'" (click)="dropDash=false; current='calender' ; onchange();  mobileQuery!.matches && sidenav.toggle() ">
+                <div class="buttons" routerLink="/dashboard/calender" routerLinkActive="current" (click)="dropDash=false; mobileQuery!.matches && sidenav.toggle() ">
                     <div class="fxcontainer" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px">
                         <mat-icon class="icon-display">calendar_today</mat-icon>
                         <span>Calender</span>
@@ -68,10 +68,10 @@
             <div class="navbar">
                 <div class="navIcon" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="30px">
                     <mat-icon class="icon-display menu" (click)="sidenav.toggle()" >menu</mat-icon>
-                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='email' ; onchange()"> mail_outline</mat-icon>
-                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='chat' ; onchange()">chat_bubble_outline</mat-icon>
-                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='todo' ; onchange()">check_box</mat-icon>
-                    <mat-icon class="icon-display otherMenu" (click)="dropDash=false; current='calender' ; onchange()">calendar_today</mat-icon>
+                    <mat-icon routerLink="/dashboard/email" class="icon-display otherMenu" (click)="dropDash=false;"> mail_outline</mat-icon>
+                    <mat-icon routerLink="/dashboard/chat" class="icon-display otherMenu" (click)="dropDash=false;">chat_bubble_outline</mat-icon>
+                    <mat-icon routerLink="/dashboard/todo" class="icon-display otherMenu" (click)="dropDash=false;">check_box</mat-icon>
+                    <mat-icon routerLink="/dashboard/calender"  class="icon-display otherMenu" (click)="dropDash=false;">calendar_today</mat-icon>
                 </div>
 
                 <div class="nav-right" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="30px">
@@ -87,20 +87,20 @@
                         </div>
                         <div class="dw-list"  [style.display]="userOpt? 'block':'none'" >
                             
-                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
-                            (click)="dropDash=false; current='email' ; onchange()" >
+                            <div routerLink="/dashboard/email" class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false;" >
                                 <mat-icon  > mail_outline</mat-icon>
                                 <span>Inbox</span>
                             </div>
                             
-                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
-                            (click)="dropDash=false; current='chat' ; onchange()">
+                            <div routerLink="/dashboard/chat" class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false;">
                                 <mat-icon > chat_bubble_outline</mat-icon>
                                 <span>Chat</span>
                             </div>
 
-                            <div class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
-                            (click)="dropDash=false; current='todo' ; onchange()" >
+                            <div routerLink="/dashboard/todo" class="dw-list-child" fxLayout="row" fxLayoutAlign="none center" 
+                            (click)="dropDash=false;" >
                                 <mat-icon > check_box</mat-icon>
                                 <span>Todo</span>
                                

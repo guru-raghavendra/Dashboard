@@ -42,11 +42,11 @@ export class HomeComponent implements OnInit {
 		this.router.navigate(['/login']);
 
 	}
-	onchange()
-	{
-		const cur=this.str+'/'+this.current;
-		this.router.navigate([cur])
-	}
+	// onchange()
+	// {
+	// 	const cur=this.str+'/'+this.current;
+	// 	this.router.navigate([cur])
+	// }
 	
 	ngOnDestroy(): void {
 		if(this.mobileQuery)

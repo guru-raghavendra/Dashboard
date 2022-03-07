@@ -131,13 +131,18 @@ mat-sidenav{
 .dw-list-child{
     font-size: 1.1rem;
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 15px;
+    padding: 10px;
+    /* margin-top: 20px;
+    margin-left: 15px; */
 
     /* margin-bottom: 15%; */
 }
 .dw-list-child span{
     margin-left: 10%;
+}
+div.dw-list-child:hover{
+    background-color: rgba(115,103,240,.12);
+    color: #7367f0;
 }
 
 .components{
