@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnInit,OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-email',
@@ -7,9 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailComponent implements OnInit {
 
-  constructor() { }
+	mobileQuery: MediaQueryList | undefined;
+	private _mobileQueryListener: () => void;
 
-  ngOnInit(): void {
-  }
+	open=true;
+
+	constructor(
+		changeDetectorRef: ChangeDetectorRef, 
+		media: MediaMatcher
+	) 
+	{
+		this.mobileQuery = media.matchMedia('(max-width: 800px)');
+		this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+		this.mobileQuery.addListener(this._mobileQueryListener);
+	}
+
+	ngOnInit(): void {
+	}
+
+	
+	ngOnDestroy(): void {
+		if(this.mobileQuery)
+			this.mobileQuery.removeListener(this._mobileQueryListener);
+	}
+
+	menter(e:Event)
+	{
+		//console.log('hello')
+		console.log(e)
+		
+	}
+	
+
+
+
 
 }

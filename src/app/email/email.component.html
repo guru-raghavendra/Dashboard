@@ -1,1 +1,44 @@
-<p>email works!</p>
+<div class="email">
+    <mat-sidenav-container>
+        <mat-sidenav #emailSidenav  [mode]="mobileQuery!.matches ? 'over' : 'side'" [opened]="mobileQuery!.matches ? 'false' :open">
+            <div>
+                <div class="compose" fxLayoutAlign="center center"  (click)="mobileQuery!.matches && emailSidenav.toggle()" >
+                    Compose
+                </div>
+                <div class="email-buttons" fxLayout="column" fxLayoutGap="20px" >
+                    <div class="email-buttons-child" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px" routerLink="/dashboard/email/inbox" routerLinkActive="current" (click)="mobileQuery!.matches && emailSidenav.toggle()">
+                        <mat-icon class="icon-display">mail_outline</mat-icon>
+                        <span>Inbox</span>
+                    </div>
+                    <div class="email-buttons-child" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px" routerLink="/dashboard/email/sent" routerLinkActive="current" (click)="mobileQuery!.matches && emailSidenav.toggle()">
+                        <img src="http://localhost:4200//src/assets/send.svg">
+                        <span>Sent</span>
+                    </div>
+                    <div class="email-buttons-child" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px" routerLink="/dashboard/email/draft" routerLinkActive="current" (click)="mobileQuery!.matches && emailSidenav.toggle()">
+                        <img src="http://localhost:4200//src/assets/edit-2.svg">
+                        <span>Draft</span>
+                    </div>
+                    <div class="email-buttons-child" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px" routerLink="/dashboard/email/starred" routerLinkActive="current" (click)="mobileQuery!.matches && emailSidenav.toggle()">
+                        <mat-icon class="icon-display">star_border</mat-icon>
+                        <span>Starred</span>
+                    </div>
+                    <div class="email-buttons-child" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px" routerLink="/dashboard/email/spam" routerLinkActive="current" (click)="mobileQuery!.matches && emailSidenav.toggle()">
+                        <img class="temp" src="http://localhost:4200//src/assets/info.svg">
+                        <span>Spam</span>
+                    </div>
+                    <div class="email-buttons-child" fxLayout="row" fxLayoutAlign="none center" fxLayoutGap="20px" routerLink="/dashboard/email/trash" routerLinkActive="current" (click)="mobileQuery!.matches && emailSidenav.toggle()">
+                        <img class="temp" src="http://localhost:4200//src/assets/trash.svg">
+                        <span>Trash</span>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="email-side-content" >
+            <div fxLayout="column" fxLayoutAlign=" none" >
+                <mat-icon class="email-menu" (click)="emailSidenav.toggle()" >menu</mat-icon>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

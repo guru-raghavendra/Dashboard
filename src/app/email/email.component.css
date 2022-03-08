@@ -1,0 +1,57 @@
+.email{
+    /* background-color: red !important; */
+    height: 100%;
+    
+    
+}
+mat-sidenav-container{
+    height: 100%;
+}
+.mat-sidenav{
+    margin-left: 0;
+    padding-left: 0;
+    width: 280px;
+    background-color: #283046;
+    color: #d0d2d6;
+}
+
+.compose{
+    height: 60px;
+    background-color: #7367f0;
+    border-radius: 10px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.email-buttons{
+    padding-left: 40px;
+    
+}
+.email-buttons-child{
+    cursor: pointer;
+}
+.email-buttons-child:hover{
+    color: #7367f0;
+    filter: invert(52%) sepia(69%) saturate(5450%) hue-rotate(228deg) brightness(100%) contrast(89%);
+    /* filter for changing color of svg file  https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element#:~:text=You%20can't%20change%20the,or%20using%20inline. */
+} 
+
+.email-side-content{
+    width: calc(100%-280px);  
+}
+
+.compose:hover{
+    box-shadow:0 0 10px 1px rgb(115 103 240 / 90%);
+}
+.email-menu{
+    display: none;
+    margin:10px
+}
+
+@media screen and (max-width: 1024px) 
+{
+    .email-menu{
+        display: block;
+    }
+    
+}
