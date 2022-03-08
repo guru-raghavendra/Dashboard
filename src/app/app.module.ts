@@ -25,6 +25,13 @@ import { TodoComponent } from './todo/todo.component';
 import { CalenderComponent } from './calender/calender.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { EmailInboxComponent } from './email-inbox/email-inbox.component';
+import { EmailSentComponent } from './email-sent/email-sent.component';
+import { EmailDraftComponent } from './email-draft/email-draft.component';
+import { EmailStarredComponent } from './email-starred/email-starred.component';
+import { EmailTrashComponent } from './email-trash/email-trash.component';
+import { EmailSpamComponent } from './email-spam/email-spam.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +44,13 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     TodoComponent,
     CalenderComponent,
     ECommerceComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    EmailInboxComponent,
+    EmailSentComponent,
+    EmailDraftComponent,
+    EmailStarredComponent,
+    EmailTrashComponent,
+    EmailSpamComponent
   ],
   imports: [
     BrowserModule,
