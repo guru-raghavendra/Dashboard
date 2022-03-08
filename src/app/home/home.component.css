@@ -115,13 +115,14 @@ mat-sidenav{
 
 .user-dropdown{
     position: relative;
+   
     
 }
 
 .dw-list{
     margin-top: 10%;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     padding: 10px;
     position: absolute;
     border-radius: 10px;
@@ -150,7 +151,7 @@ div.dw-list-child:hover{
     margin: 30px;
     background-color: #283046;
     border-radius: 10px;
-    padding: 2%;
+    /* padding: 2%; */
     color: #d0d2d6;
 }
 
