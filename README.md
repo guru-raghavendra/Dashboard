@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # impotant links for reference
 1.  for updating the color of the svg file (email.component.ts): filter for changing color of svg file  [stackoverflow](https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element#:~:text=You%20can't%20change%20the,or%20using%20inline.)
+2. https://www.youtube.com/watch?v=k6h1I73vpzQ
+3. https://stackoverflow.com/questions/61794568/adding-newline-in-json-object-typescript-and-angular
+4. https://developer.mozilla.org/en-US/docs/Web/CSS/white-space
+
+
