@@ -6,6 +6,12 @@
 }
 mat-sidenav-container{
     height: 100%;
+    color: #d0d2d6;
+}
+.current{
+    border-left: 5px solid  #7367f0;
+    color: #7367f0;
+    filter: invert(52%) sepia(69%) saturate(5450%) hue-rotate(228deg) brightness(100%) contrast(89%);
 }
 .mat-sidenav{
     margin-left: 0;
@@ -14,7 +20,9 @@ mat-sidenav-container{
     background-color: #283046;
     color: #d0d2d6;
 }
-
+mat-sidenav-content{
+    background-color: #283046;
+}
 .compose{
     height: 60px;
     background-color: #7367f0;
@@ -23,12 +31,13 @@ mat-sidenav-container{
     cursor: pointer;
 }
 
-.email-buttons{
-    padding-left: 40px;
+/* .email-buttons{
     
-}
+    
+} */
 .email-buttons-child{
     cursor: pointer;
+    padding-left: 40px;
 }
 .email-buttons-child:hover{
     color: #7367f0;

@@ -33,6 +33,8 @@ import { EmailTrashComponent } from './email-trash/email-trash.component';
 import { EmailSpamComponent } from './email-spam/email-spam.component';
 
 
+import { SummaryPipe } from './summary.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,8 @@ import { EmailSpamComponent } from './email-spam/email-spam.component';
     EmailDraftComponent,
     EmailStarredComponent,
     EmailTrashComponent,
-    EmailSpamComponent
+    EmailSpamComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

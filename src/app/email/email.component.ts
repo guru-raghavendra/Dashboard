@@ -1,3 +1,4 @@
+import { EmailRenderService } from './../email-render.service';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit,OnDestroy } from '@angular/core';
 
@@ -13,9 +14,11 @@ export class EmailComponent implements OnInit {
 
 	open=true;
 
+	
+
 	constructor(
 		changeDetectorRef: ChangeDetectorRef, 
-		media: MediaMatcher
+		media: MediaMatcher,
 	) 
 	{
 		this.mobileQuery = media.matchMedia('(max-width: 800px)');
