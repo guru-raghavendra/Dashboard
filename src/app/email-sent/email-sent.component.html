@@ -1,1 +1,58 @@
-<p>email-sent works!</p>
+<div class="email-list" fxLayout="column">
+	<div [style.display]=" open_content ? 'none' : 'block'">
+		<div class="email" fxLayout="row" *ngFor="let mail of emails"  >
+			<div class="email-left" fxLayoutAlign="center center">
+				<img class="userimg img-fluid" src="http://localhost:4200//src/assets/user.png" alt="image">
+			</div>
+			<div class="email-content" fxLayout="column" (click)="disp(mail)">
+				<div class="email-name">
+					{{mail["name"]}}	
+				</div>
+				<div class="email-subject">
+					{{mail["subject"] }} 
+				</div>
+				<div class="email-body">
+					{{mail["body"] | summary}}
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+
+</div>
+<div class="detailed-content" [style.display]=" !open_content ? 'none' : 'block'">
+	
+	<div class="subject" fxLayout="row" fxLayoutAlign=" center" fxLayoutGap="30px">
+		<mat-icon (click)="open_content=!open_content" >keyboard_arrow_left</mat-icon>
+		<span>{{mail["subject"]}}</span>
+		
+	</div>
+	<div class="detail">
+		<div class="content" fxLayout="column" >
+			<div class="header"  fxLayout="row" fxLayoutAlign="none center">
+				<div class="email-left" fxLayoutAlign="center center">
+					<img class="userimg img-fluid" src="http://localhost:4200//src/assets/user.png" alt="image">
+				</div>
+				<div class="email-content" fxLayout="column" >
+					<div class="email-name">
+						{{mail["name"]}}	
+					</div>
+					<div class="id">
+						{{mail["email"]}}	
+					</div>
+					
+					
+				</div>
+			</div>
+
+			<div class="body" style="white-space:break-spaces">
+				<p>{{mail["body"] }}</p>
+			</div>
+
+		</div>
+	</div>
+	
+</div>
+

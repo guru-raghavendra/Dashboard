@@ -64,3 +64,80 @@ mat-sidenav-content{
     }
     
 }
+div.compose-mail{
+
+    /* position: fixed; */
+    margin: 30px;
+    width: 68% !important;
+    z-index: 3;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    
+    /* border: 3px solid #73AD21 */
+}
+.header{
+    background-color: #161d31;
+    font-size: 1.3rem;
+    letter-spacing: .9px;
+    padding: 10px;
+    border: 1px solid;
+    border-color: #3b4253;
+}
+.content{
+    background-color: #283046;
+    border-color: #3b4253;
+}
+.form-group{
+    color: #d0d2d6;
+    padding: 10px;
+    border: 1px solid;
+    border-color: #3b4253;
+}
+
+input{
+    color: #d0d2d6;
+    text-decoration: none;
+    border: none;
+    background-color:#283046;
+    padding-left:10px;
+    
+}
+input:focus , textarea:focus{
+    outline: none;
+}
+textarea{
+    text-decoration: none;
+    color: #d0d2d6;
+    width: 100%;
+    border: none;
+    background-color:#283046;
+}
+textarea::placeholder{
+    color: #d0d2d6;
+    font-style: italic;
+
+}
+
+button{
+    color: #d0d2d6;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    /* margin: 10px; */
+    border: none;
+    /* background-color: #7367f0; */
+    background-color: #413b7e;
+}
+.submit{
+    background-color: #7367f0 ; 
+    
+}
+.submit:hover{
+    box-shadow:1px 1px 8px  #6257f7;
+}
+div.header>mat-icon{
+    cursor: pointer;
+}
+

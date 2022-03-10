@@ -2,7 +2,7 @@
     <mat-sidenav-container>
         <mat-sidenav #emailSidenav  [mode]="mobileQuery!.matches ? 'over' : 'side'" [opened]="mobileQuery!.matches ? 'false' :open">
             <div>
-                <div class="compose" fxLayoutAlign="center center"  (click)="mobileQuery!.matches && emailSidenav.toggle()" >
+                <div class="compose" fxLayoutAlign="center center"  (click)="compose_mail_open=!compose_mail_open ; mobileQuery!.matches && emailSidenav.toggle()" >
                     Compose
                 </div>
                 <div class="email-buttons" fxLayout="column" fxLayoutGap="20px" >
@@ -41,4 +41,28 @@
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
+    <div class="compose-mail" [style.display]="compose_mail_open ? 'block': 'none'">
+        <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+            Compose mail
+            <mat-icon (click)="compose_mail_open=!compose_mail_open">close</mat-icon>
+        </div>
+        <div class="content">
+            <form #f="ngForm" (ngSubmit)="submit(f)" >
+                <div class="form-group">
+                    <label for="email-to">To:</label>
+                    <input required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"  ngModel name="email-to"  #tempvar="ngModel"  id="email-to" type="email" (change)="onChange(tempvar)">
+                </div>
+                <div class="form-group">
+                    <label for="email-subject">Subject:</label>
+                    <input ngModel name="email-subject" id="email-subject" type="text">
+                </div>
+                <div class="form-group">
+                    <textarea ngModel name="email-body" placeholder="Message" rows="10" ></textarea>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="disable"  [class.submit]="!disable" type="submit">send</button>
+                </div>   
+            </form>
+        </div>
+    </div>
 </div>
