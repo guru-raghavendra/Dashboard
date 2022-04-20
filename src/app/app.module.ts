@@ -34,6 +34,7 @@ import { EmailSpamComponent } from './email-spam/email-spam.component';
 
 
 import { SummaryPipe } from './summary.pipe';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,8 @@ import { SummaryPipe } from './summary.pipe';
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
+    HighchartsChartModule
+    
     // RouterModule.forRoot([
     //   {path: '',component:HomeComponent, canActivate:[Authgurad]},
     //   // {path: '',component:HomeComponent},
